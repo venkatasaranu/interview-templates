@@ -23,7 +23,7 @@ The provided project uses **Java 21** and **Spring Boot 3.x**
 
 🗃️ Use in-memory storage (e.g., Map, List) — no need for a database
 
-📦 Use Java Records for DTOs if desired
+📦 Use Java DTOs AND Domains if desired
 
 🔄 Include DTO-to-Entity mapping where applicable
 

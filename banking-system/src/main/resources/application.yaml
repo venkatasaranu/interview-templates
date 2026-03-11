@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: banking-system
+
+server:
+  port: 8080
+
+banking:
+  transfer:
+    daily-limit: 10000.00
+    international-fee-percentage: 2.5
+  fraud:
+    suspicious-amount-threshold: 10000.00
+    max-failed-attempts: 3
+  interest:
+    savings-rate-annual: 0.035
+    checking-rate-annual: 0.005

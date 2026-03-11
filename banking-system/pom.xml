@@ -10,10 +10,10 @@
         <relativePath/>
     </parent>
     <groupId>com.interview</groupId>
-    <artifactId>parking-lot-system</artifactId>
+    <artifactId>banking-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>parking-lot-system</name>
-    <description>Parking Lot Management System – Interview Exercise</description>
+    <name>banking-system</name>
+    <description>Banking System – Interview Exercise</description>
     <properties>
         <java.version>21</java.version>
     </properties>

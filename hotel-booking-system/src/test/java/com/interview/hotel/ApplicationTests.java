@@ -1,4 +1,4 @@
-package com.interview.banking;
+package com.interview.hotel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

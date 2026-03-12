@@ -1,4 +1,4 @@
-package com.interview.hotel;
+package com.interview.theater;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

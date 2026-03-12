@@ -1,4 +1,4 @@
-package com.interview.hotel;
+package com.interview.theater;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

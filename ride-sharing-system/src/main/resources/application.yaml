@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ride-sharing-system
+
+server:
+  port: 8080
+
+ride:
+  pricing:
+    base-fare: 2.50
+    per-km-rate:
+      economy: 1.20
+      comfort: 1.80
+      premium: 2.50
+    per-minute-rate: 0.25
+    minimum-fare: 5.00
+  surge:
+    threshold-percentage: 80
+    surge-multiplier: 1.5
+  cancellation:
+    free-cancel-seconds: 120
+    penalty-fee: 3.00

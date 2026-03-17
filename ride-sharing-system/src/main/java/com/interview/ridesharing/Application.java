@@ -1,4 +1,4 @@
-package com.interview.theater;
+package com.interview.ridesharing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

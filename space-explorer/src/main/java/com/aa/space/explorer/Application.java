@@ -1,4 +1,4 @@
-package com.aa.currency.converter;
+package com.aa.space.explorer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

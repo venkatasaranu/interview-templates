@@ -1,0 +1,6 @@
+
+[
+  { "from":"DFW","to":"ORD","depart":"06:10","arrive":"08:38","price":189 },
+  { "from":"DFW","to":"ORD","depart":"07:17","arrive":"09:45","price":189 },
+  { "from":"DFW","to":"ORD","depart":"09:30","arrive":"12:00","price":210 }
+]

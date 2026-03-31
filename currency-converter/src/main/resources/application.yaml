@@ -1,0 +1,18 @@
+server:
+  port: 8097
+
+spring:
+  application:
+    name: currency-converter
+
+exchangerate:
+  api:
+    base-url: https://open.er-api.com/v6
+    # Free open endpoint — no API key required
+    # Docs: https://www.exchangerate-api.com/docs/free
+    # Rate limit: 1,500 requests/month
+
+webclient:
+  ssl:
+    trust-all: false
+    # Set to true only for development/testing with self-signed certificates

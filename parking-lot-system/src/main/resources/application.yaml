@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: parking-lot-system
+
+server:
+  port: 8080
+
+parking:
+  pricing:
+    base-rate-per-hour:
+      motorcycle: 2.00
+      compact: 3.00
+      regular: 4.00
+      large: 6.00
+    peak-hour-multiplier: 1.25
+    overtime-multiplier: 1.50
+    overtime-threshold-hours: 2
+    weekend-flat-rate:
+      motorcycle: 8.00
+      compact: 12.00
+      regular: 15.00
+      large: 20.00

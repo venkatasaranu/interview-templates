@@ -50,6 +50,36 @@ Build a Spring Boot REST API that integrates with **TheMealDB API** to search an
 - The filter endpoint returns summaries only — use lookup.php for full detail
 - No authentication required
 
+---
+
+## Resiliency Requirements
+TheMealDB is a free third-party API — treat it as **unreliable**: it can be slow, time out, return
+5xx errors, or be briefly unavailable. Your service must degrade gracefully rather than hang or
+propagate raw failures. Use **Resilience4j** (already on the classpath) to wrap the outbound calls.
+
+Apply the following four patterns to the external calls (e.g. on the client/service methods):
+
+1. **Timeout (TimeLimiter)** — bound how long you wait on TheMealDB. A hung dependency must not
+   hang your endpoint. Suggested: ~2s per call.
+2. **Retry** — re-attempt only transient failures (timeouts, 5xx, connection errors) with a short
+   backoff. Do **not** retry on a clean 404. Suggested: 3 attempts, exponential backoff.
+3. **Circuit Breaker** — once TheMealDB is failing past a threshold, fail fast (open the circuit)
+   instead of hammering it, and recover automatically via a half-open probe.
+4. **Fallback** — when a call ultimately fails (retries exhausted / circuit open), return a sensible
+   degraded response instead of a 500:
+   - search / category / categories → empty list
+   - random / details → `503 Service Unavailable` with a clear message (do not fabricate a recipe)
+
+### Notes
+- Prefer configuring instances in `application.yaml` (`resilience4j.retry`, `.circuitbreaker`,
+  `.timelimiter`) over hard-coded values, and apply them with annotations
+  (`@Retry`, `@CircuitBreaker`, `@TimeLimiter`) or programmatically.
+- Be explicit about **what counts as retryable** vs. a real client error (404). This distinction
+  matters most.
+- Expose circuit-breaker state via Actuator (`/actuator/health`) so the breaker is observable.
+- A short test that simulates a slow/failing TheMealDB (e.g. stubbed client) and asserts the
+  fallback fires is highly valued.
+
 ## Swagger UI
 Once running: http://localhost:8095/swagger-ui.html
 Generate static spec: `mvn verify` → `target/generated-docs/openapi.yaml`

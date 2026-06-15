@@ -1,2 +1,18 @@
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Claude
+.claude/
+
+# Maven
+target/
+
+# Angular
 flight-search/.angular/
-.idea/workspace.xml
+
+# OS files
+.DS_Store
+Thumbs.db

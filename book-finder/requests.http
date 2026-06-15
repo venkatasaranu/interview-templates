@@ -1,0 +1,34 @@
+### book-finder — sample requests (target behavior)
+### Open in IntelliJ / VS Code "REST Client", or translate to curl.
+@host = http://localhost:8096
+
+### 1. Search books
+GET {{host}}/api/books/search?q=tolkien
+
+### 1b. Search with no results -> expect empty list, NOT 404
+GET {{host}}/api/books/search?q=zzzzxxxqqqnotarealbook
+
+### 2. Work details (The Lord of the Rings) -> note polymorphic `description`
+GET {{host}}/api/books/OL27448W
+
+### 2b. Unknown work -> expect 404
+GET {{host}}/api/books/OL000000000W
+
+### 3. Author details (J.R.R. Tolkien) -> note polymorphic `bio`
+GET {{host}}/api/authors/OL26320A
+
+### 4. Editions of a work
+GET {{host}}/api/books/OL27448W/editions
+
+### Resiliency / observability
+GET {{host}}/actuator/health
+
+### Swagger UI (open in browser)
+# {{host}}/swagger-ui/index.html
+
+# ---- curl equivalents ----
+# curl "http://localhost:8096/api/books/search?q=tolkien"
+# curl "http://localhost:8096/api/books/OL27448W"
+# curl "http://localhost:8096/api/authors/OL26320A"
+# curl "http://localhost:8096/api/books/OL27448W/editions"
+# curl "http://localhost:8096/actuator/health"

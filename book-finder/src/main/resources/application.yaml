@@ -1,0 +1,13 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: book-finder
+
+openlibrary:
+  api:
+    base-url: https://openlibrary.org
+    covers-url: https://covers.openlibrary.org
+    # Free public API — no key required
+    # Docs: https://openlibrary.org/developers/api

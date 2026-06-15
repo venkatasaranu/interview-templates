@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.aa</groupId>
-    <artifactId>recipe-finder</artifactId>
+    <artifactId>book-finder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>recipe-finder</name>
-    <description>Recipe Finder — powered by TheMealDB API (no key required)</description>
+    <name>book-finder</name>
+    <description>Book Finder — powered by the Open Library API (no key required)</description>
 
     <properties>
         <java.version>21</java.version>
@@ -109,7 +109,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <apiDocsUrl>http://localhost:8095/v3/api-docs.yaml</apiDocsUrl>
+                    <apiDocsUrl>http://localhost:8096/v3/api-docs.yaml</apiDocsUrl>
                     <outputFileName>openapi.yaml</outputFileName>
                     <outputDir>${project.build.directory}/generated-docs</outputDir>
                 </configuration>

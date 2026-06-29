@@ -11,3 +11,26 @@ themealdb:
     # Free public API — no key required
     # The "1" in the URL is the public test key
     # Docs: https://www.themealdb.com/api.php
+
+
+resilience4j:
+  retry:
+    instances:
+      mealdbApiRetry:
+        max-attempts: 2
+        wait-duration: 2s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2.0
+        max-wait-duration: 30s
+
+  circuitbreaker:
+    instances:
+      mealdbApiCircuitBreaker:
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 5
+        minimum-number-of-calls: 3
+        permitted-number-of-calls-in-half-open-state: 2
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        enable-automatic-transition-from-open-to-half-open: true

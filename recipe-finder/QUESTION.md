@@ -5,7 +5,7 @@ Build a Spring Boot REST API that integrates with **TheMealDB API** to search an
 
 **External API:** https://www.themealdb.com/api.php
 **No API Key Required** (public test key "1" is embedded in the base URL)
-**Base URL:** `https://www.themealdb.com/api.json/v1/1`
+**Base URL:** `https://www.themealdb.com/api/json/v1/1`
 
 ---
 

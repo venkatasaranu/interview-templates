@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: weather-dashboard
+
+openweathermap:
+  api:
+    base-url: https://api.openweathermap.org
+    # FREE API key — sign up at: https://openweathermap.org/api
+    api-key: <YOUR_OPENWEATHERMAP_API_KEY>
+    units: metric

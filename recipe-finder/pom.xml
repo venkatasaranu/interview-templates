@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.aa</groupId>
-    <artifactId>weather-dashboard</artifactId>
+    <artifactId>recipe-finder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>weather-dashboard</name>
-    <description>Weather Dashboard — powered by OpenWeatherMap API</description>
+    <name>recipe-finder</name>
+    <description>Recipe Finder — powered by TheMealDB API (no key required)</description>
 
     <properties>
         <java.version>21</java.version>
@@ -50,6 +50,18 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
@@ -82,7 +94,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <apiDocsUrl>http://localhost:8090/v3/api-docs.yaml</apiDocsUrl>
+                    <apiDocsUrl>http://localhost:8095/v3/api-docs.yaml</apiDocsUrl>
                     <outputFileName>openapi.yaml</outputFileName>
                     <outputDir>${project.build.directory}/generated-docs</outputDir>
                 </configuration>
